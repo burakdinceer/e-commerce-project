@@ -1,0 +1,32 @@
+.header-page {
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.053);
+    position: relative;
+    align-items: center;
+    .header-text {
+        a {
+            color: #F35825;
+            font-size: 1.2rem;
+        }
+        .header-logo {
+  
+            img{
+             width: 200px;
+             object-fit: cover;
+            
+            }
+         }
+    }
+
+    .header-basket {
+        position: absolute;   
+        right: 0;
+        top: 0;
+        margin-top: 40px;
+        margin-right: 150px;
+        font-size: 2rem;
+       a {
+        color:  #F35825;;
+       }
+    }
+  
+}
