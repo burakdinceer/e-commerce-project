@@ -8,10 +8,10 @@ const initialState = {
             price: 699.99,
             stock: 40,
             sizes: ["40", "41", "42", "43"],
-            image: "/public/shoes1.jpg",
+            image: "/shoes1.jpg",
             discountRate: 0.1,
-            rate: 4,
-            totalRate:55
+            rate: 5,
+            totalRate:250
           },
           {
             id: 2,
@@ -19,10 +19,10 @@ const initialState = {
             price: 899.99,
             stock: 80,
             sizes: ["40", "41", "42", "43"],
-            image: "/public/shoes2.jpg",
+            image: "/shoes2.jpg",
             discountRate: 0.1,
             rate: 4,
-            totalRate:55
+            totalRate:190
           },
           {
             id: 3,
@@ -30,10 +30,10 @@ const initialState = {
             price: 499.99,
             stock: 60,
             sizes: ["40", "41", "42", "43"],
-            image: "/public/shoes3.jpg",
+            image: "/shoes3.jpg",
             discountRate: 0.1,
             rate: 4,
-            totalRate:55
+            totalRate:170
           },
           {
             id: 4,
@@ -41,9 +41,9 @@ const initialState = {
             price: 999.99,
             stock: 10,
             sizes: ["40", "41", "42", "43"],
-            image: "/public/shoes4.jpg",
+            image: "/shoes4.jpg",
             discountRate: 0.1,
-            rate: 4,
+            rate: 2,
             totalRate:55
           },
           {
@@ -52,10 +52,10 @@ const initialState = {
             price: 399.99,
             stock: 30,
             sizes: ["40", "41", "42", "43"],
-            image: "/public/shoes5.jpg",
+            image: "/shoes5.jpg",
             discountRate: 0.1,
-            rate: 4,
-            totalRate:55
+            rate: 3,
+            totalRate:83
           },
           {
             id: 6,
@@ -63,10 +63,10 @@ const initialState = {
             price: 599.99,
             stock: 50,
             sizes: ["40", "41", "42", "43"],
-            image: "/public/shoes6.jpg",
+            image: "/shoes6.jpg",
             discountRate: 0.1,
-            rate: 4,
-            totalRate:55
+            rate: 5,
+            totalRate:320
           },
           {
             id: 7,
@@ -74,10 +74,10 @@ const initialState = {
             price: 1100.99,
             stock: 20,
             sizes: ["40", "41", "42", "43"],
-            image: "/public/shoes7.jpg",
+            image: "/shoes7.jpg",
             discountRate: 0.1,
             rate: 4,
-            totalRate:55
+            totalRate:156
           },
           {
             id: 8,
@@ -85,10 +85,10 @@ const initialState = {
             price: 899.99,
             stock: 30,
             sizes: ["40", "41", "42", "43"],
-            image: "/public/shoes8.jpg",
+            image: "/shoes8.jpg",
             discountRate: 0.1,
-            rate: 4,
-            totalRate:55
+            rate: 2,
+            totalRate:35
           },
     ]
 }
