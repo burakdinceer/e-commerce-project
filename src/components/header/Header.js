@@ -13,11 +13,11 @@ const Header = () => {
       <div className="header-text">
         <Navbar className="header-navbar" bg="white" data-bs-theme="light">
           <Container>
-            <Navbar.Brand className="header-logo" href="#home">
+            <Navbar.Brand className="header-logo" href="/">
               <img alt="Null" src="shoes-logo.jpeg" />
             </Navbar.Brand>
             <Nav className="me-auto">
-              <Nav.Link href="#home">Anasayfa</Nav.Link>
+              <Nav.Link href="/">Anasayfa</Nav.Link>
               <Nav.Link href="#features">Ürünler</Nav.Link>
               <Nav.Link href="#/">Hakkımızda</Nav.Link>
               <Nav.Link href="#pricing">İletişim</Nav.Link>

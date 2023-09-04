@@ -1,10 +1,11 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Container, NavLink } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import "./HomeProduct.scss";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import { Link } from "react-router-dom";
 const HomeProduct = () => {
   const { product } = useSelector((state) => state.data);
 
@@ -31,7 +32,7 @@ const HomeProduct = () => {
               </Card>
             </div>
           ))}
-          <Button className="all-btn"><AiOutlineArrowRight/></Button>
+       <NavLink href="/productlist"><Button className="all-btn"><AiOutlineArrowRight/></Button></NavLink>
         </div>
        
       </Container>

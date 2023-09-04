@@ -1,9 +1,8 @@
-.homeProduct {
-    margin-top: 70px;
-  
+.product-list {
+   
     .product-title{
         text-align: center;
-        
+        margin-top: 50px;
         h2{
             font-size: 4rem;
             margin-bottom: 30px;
@@ -23,10 +22,12 @@
     
     .product-card {
         display: flex;
+        flex-wrap: wrap;
        .product-card-item {
-        margin-left: 50px;
+        margin-left: 20px;
+        margin-top: 50px;
         button{
-            background-color:  #F35825;
+        background-color:  #F35825;
           text-align: center;
         }
         .product-card-img
@@ -45,5 +46,20 @@
         font-size: 3rem;
         height: 610px;
       }
+    }
+    .pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        button {
+            background-color:#F35825 ;
+            margin-left: 20px;
+            width: 50px;
+            height: 50px;
+            color: white;
+            border-radius: 30px;
+            
+           
+        }
     }
 }
