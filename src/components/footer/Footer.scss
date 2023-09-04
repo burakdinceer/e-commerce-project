@@ -1,0 +1,23 @@
+.footer {
+    .footer-logo {
+     
+        text-align: center;
+       img {
+        width: 200px;
+       }
+    }
+    .footer-text {
+       text-align: center;
+       color:#F35825;
+    }
+    .footer-contact {
+       display: flex;
+       justify-content: center;
+      p {
+        margin-left: 10px;
+            font-size: 15px;
+            opacity: 0.5;
+      }
+      
+    }
+}
