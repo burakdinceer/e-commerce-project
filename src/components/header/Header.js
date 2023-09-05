@@ -14,7 +14,7 @@ const Header = () => {
         <Navbar className="header-navbar" bg="white" data-bs-theme="light">
           <Container>
             <Navbar.Brand className="header-logo" href="/">
-              <img alt="Null" src="shoes-logo.jpeg" />
+              <img alt="Null" src="/shoes-logo.jpeg" />
             </Navbar.Brand>
             <Nav className="me-auto">
               <Nav.Link href="/">Anasayfa</Nav.Link>

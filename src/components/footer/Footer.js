@@ -7,7 +7,7 @@ const Footer = () => {
         <Container>
             <Row>
             <Col xl={12} className='footer-logo'>
-                <img src='shoes-logo.jpeg'/>
+                <img src='/shoes-logo.jpeg'/>
             </Col>
             <Col xl={12} className='footer-text'>
                 <p>FUTURE STYLE</p>

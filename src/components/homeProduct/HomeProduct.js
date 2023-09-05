@@ -4,10 +4,19 @@ import { useSelector } from "react-redux";
 import "./HomeProduct.scss";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import { AiOutlineArrowRight } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { AiOutlineArrowRight,AiOutlineStar } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
+
 const HomeProduct = () => {
   const { product } = useSelector((state) => state.data);
+
+  const navigate = useNavigate()
+  
+  const handleNavigate = (item) => {
+    navigate(`/detail/${item.id}`)
+    
+  }
+
 
   return (
     <div className="homeProduct">
@@ -25,9 +34,21 @@ const HomeProduct = () => {
                   src={item.image}
                 />
                 <Card.Body>
+                <Card.Subtitle className='card-star my-2'>
+                {
+                    [...Array(5)].map((_, i) => (
+                        <AiOutlineStar key={i}
+                        style={{color: i < item.rate ? `orange` : "gray"}}
+                        />
+                    ))
+                }
+                <span><small>({item.totalRate})</small></span>
+            </Card.Subtitle>
                   <Card.Title>{item.name}</Card.Title>
+                  
                   <Card.Text>{item.price} TL</Card.Text>
-                <div className="detail-btn">  <Button variant="primary">Detayları Gör</Button></div>
+              <NavLink onClick={()=>handleNavigate(item)} className="detail-btn"> <Button variant="primary">Detayları Gör</Button> </NavLink>
+              
                 </Card.Body>
               </Card>
             </div>

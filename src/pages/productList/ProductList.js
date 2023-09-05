@@ -3,8 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import Layout from "../../components/layout/Layout";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import { AiOutlineArrowRight } from "react-icons/ai";
-import { Link } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import './ProductList.scss'
 import { changePage } from "../../redux/dataSlice";
