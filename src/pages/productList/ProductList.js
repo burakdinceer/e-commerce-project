@@ -6,15 +6,18 @@ import Card from "react-bootstrap/Card";
 import { Container } from "react-bootstrap";
 import './ProductList.scss'
 import { changePage } from "../../redux/dataSlice";
+import { useNavigate } from "react-router-dom";
 const ProductList = () => {
     const {product,currentPage, productsPerPage} = useSelector((state) => state.data)
 
     const dispatch = useDispatch()
-
+    const navigate = useNavigate()
     const startIndex = (currentPage - 1) * productsPerPage;
     const endIndex = startIndex + productsPerPage;
     const currentProducts = product.slice(startIndex, endIndex);
-
+    const handleChange = (item) => {
+      navigate(`/detail/${item.id}`)
+    }
 
   return (
     <div className="product-list">
@@ -35,7 +38,7 @@ const ProductList = () => {
                 <Card.Body>
                   <Card.Title>{item.name}</Card.Title>
                   <Card.Text>{item.price} TL</Card.Text>
-                <div className="detail-btn">  <Button variant="primary">Detayları Gör</Button></div>
+                <div onClick={()=>handleChange(item)} className="detail-btn">  <Button variant="primary">Detayları Gör</Button></div>
                 </Card.Body>
               </Card>
             </div>
