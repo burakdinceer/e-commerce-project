@@ -242,10 +242,15 @@ export const dataSlice = createSlice({
       },
       addBasket:(state,action) => {
         state.basketData = [...state.basketData,action.payload]
+      },
+      deleteBasket:(state,action) => {
+        state.basketData = state.basketData.filter(item => (
+          item.id !== action.payload
+        ))
       }
 
     }
 })
 
 export default dataSlice.reducer
-export const  {changePage,selectSize,addBasket} = dataSlice.actions
+export const  {changePage,selectSize,addBasket,deleteBasket} = dataSlice.actions

@@ -90,7 +90,7 @@ const Detail = () => {
                       <button onClick={()=>modalChange(newProduct)} className="add-btn">
                         Sepete Ekle
                       </button>
-                      <button className="go-btn">Sepete Git</button>
+                      <button onClick={()=>navigate('/basket')} className="go-btn">Sepete Git</button>
                     </div>
                   </>
                 )}
