@@ -226,6 +226,8 @@ const initialState = {
 
     currentPage: 1,
     productsPerPage: 8, 
+    size:'',
+    basketData:[]
 }
 
 export const dataSlice = createSlice({
@@ -234,9 +236,16 @@ export const dataSlice = createSlice({
     reducers:{
       changePage:(state,action) => {
         state.currentPage = action.payload
+      },
+      selectSize:(state,action) => {
+        state.size = action.payload
+      },
+      addBasket:(state,action) => {
+        state.basketData = [...state.basketData,action.payload]
       }
+
     }
 })
 
 export default dataSlice.reducer
-export const  {changePage} = dataSlice.actions
+export const  {changePage,selectSize,addBasket} = dataSlice.actions

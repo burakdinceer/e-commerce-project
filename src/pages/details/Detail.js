@@ -2,17 +2,19 @@ import React, { useState } from "react";
 import "./Detail.scss";
 import Layout from "../../components/layout/Layout";
 import { useNavigate, useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Col, Row, Container, NavLink } from "react-bootstrap";
 import { AiOutlineArrowLeft, AiOutlineStar } from "react-icons/ai";
-import Modal from "../../components/modal/CustomModal";
 import CustomModal from "../../components/modal/CustomModal";
+import { addBasket, selectSize } from "../../redux/dataSlice";
+import Swal from "sweetalert2";
 
 const Detail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { product } = useSelector((state) => state.data);
+  const { product,size } = useSelector((state) => state.data);
   const [showModal, setShowModal] = useState(false);
+  const dispacth = useDispatch()
   const newArr = product.filter((item) => item.id === +id);
 
   const newProduct = newArr[0];
@@ -21,8 +23,20 @@ const Detail = () => {
     navigate(-1);
   };
 
-  const modalChange = () => {
-    setShowModal(!showModal);
+  const handleSize = (el) => {
+    dispacth(selectSize(el))
+  }
+
+  const modalChange = (item) => {
+   if(size===''){
+    setShowModal(true);
+   }
+   else{
+    const newData = {...item, sizes:size}
+    dispacth(addBasket(newData))
+    dispacth(selectSize(''))
+    Swal.fire('Sepete Eklendi...')
+   }
   };
 
   return (
@@ -63,7 +77,9 @@ const Detail = () => {
                     <div className="detail-price">{newProduct.price} TL</div>
                     <div className="detail-size">
                       {newProduct.sizes.map((item) => (
-                        <button>{item}</button>
+                        <button onClick={()=>handleSize(item)}>
+                          {item}
+                          </button>
                       ))}
                     </div>
                     <div className="detail-stock">
@@ -71,7 +87,7 @@ const Detail = () => {
                       {newProduct.stock}
                     </div>
                     <div className="detail-btn">
-                      <button onClick={modalChange} className="add-btn">
+                      <button onClick={()=>modalChange(newProduct)} className="add-btn">
                         Sepete Ekle
                       </button>
                       <button className="go-btn">Sepete Git</button>

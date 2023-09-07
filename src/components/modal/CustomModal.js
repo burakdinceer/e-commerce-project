@@ -4,9 +4,7 @@ import Modal from 'react-bootstrap/Modal';
 
 const CustomModal = ({setShowModal}) => {
 
-  const closeModal = () => {
-    setShowModal(false)
-  }
+ 
 
   return (
  
@@ -19,7 +17,7 @@ const CustomModal = ({setShowModal}) => {
         <Modal.Title>Numara Seçiniz...</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-      <Button onClick={closeModal} variant="secondary">Numara Seç</Button>
+      <Button onClick={()=>(setShowModal(false))} variant="secondary">Numara Seç</Button>
       </Modal.Body>
     </Modal.Dialog>
   </div>

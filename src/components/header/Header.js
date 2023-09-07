@@ -6,8 +6,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./Header.scss";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+
+  const {basketData} = useSelector((state) => state.data)
+
   return (
     <div className="header-cmp">
       <div className="header-text">
@@ -29,7 +33,11 @@ const Header = () => {
       <div className="header-basket">
           <NavLink>
             <AiOutlineShoppingCart />
+            
           </NavLink>
+          <button className="basketNumber">
+             <p>{basketData.length}</p>
+            </button>
         </div>
 
 
