@@ -253,7 +253,7 @@ export const dataSlice = createSlice({
         state.basketData = []
       },
       addPaymentData:(state,action) => {
-        state.paymentData = action.payload
+        state.paymentData = [action.payload]
       }
 
     }
