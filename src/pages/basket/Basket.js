@@ -73,7 +73,7 @@ const Basket = () => {
           </Table>
           <div className="basketButton">
             <button onClick={resetData}>Sepeti Temizle</button>
-            <button>Ödemeye Geç</button>
+            <button onClick={()=>navigate('/basket/payment')}>Ödemeye Geç</button>
           </div>
 
         </Container>

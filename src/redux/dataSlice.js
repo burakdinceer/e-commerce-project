@@ -227,7 +227,8 @@ const initialState = {
     currentPage: 1,
     productsPerPage: 8, 
     size:'',
-    basketData:[]
+    basketData:[],
+    paymentData:[]
 }
 
 export const dataSlice = createSlice({
@@ -250,10 +251,13 @@ export const dataSlice = createSlice({
       },
       basketReset:(state) => {
         state.basketData = []
+      },
+      addPaymentData:(state,action) => {
+        state.paymentData = action.payload
       }
 
     }
 })
 
 export default dataSlice.reducer
-export const  {changePage,selectSize,addBasket,deleteBasket,basketReset} = dataSlice.actions
+export const  {changePage,selectSize,addBasket,deleteBasket,basketReset,addPaymentData} = dataSlice.actions

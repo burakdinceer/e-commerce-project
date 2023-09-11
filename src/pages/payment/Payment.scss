@@ -1,0 +1,45 @@
+.payment-page {
+  margin-top: 60px;
+  .basketDone {
+    color: #F35825;
+    margin-bottom: 40px;
+    display: inline-block;
+    font-size: 1rem;
+  }
+  .formText {
+   font-size: 1.5rem;
+   color: red;
+   font-weight: 500;
+  }
+
+ form {
+    p {
+        
+        font-size: 1.2rem;
+        font-weight: 400;
+        margin-top: 5px;
+        margin-top: 40px;
+    }
+    input {
+        width: 90%;
+        height: 40px;
+        border-radius: 10px;
+        border: 0.5px solid #F35825;
+    }
+ }
+ .formPayment,.formCargo{
+   select {
+       width: 40%;
+       border: 0.5px solid #F35825;
+       height: 30px;
+     
+   }
+ }
+ .formSubmit {
+    width: 40%;
+    margin-top: 40px;
+   color: white;
+   background-color:#F35825; ;
+ }
+
+}
