@@ -1,24 +1,40 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Basket.scss";
 import Table from "react-bootstrap/Table";
 import Layout from "../../components/layout/Layout";
 import { Container } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { AiTwotoneDelete } from "react-icons/ai";
-import { NavLink } from "react-router-dom";
-import { deleteBasket } from "../../redux/dataSlice";
-const Basket = () => {
+import { NavLink, useNavigate } from "react-router-dom";
+import { basketReset, deleteBasket } from "../../redux/dataSlice";
+import { AiOutlineArrowLeft } from "react-icons/ai";
 
-    const {basketData} = useSelector((state) => state.data)
-    const dispacth = useDispatch()
-    const handleDelete = (id) => {
-        dispacth(deleteBasket(id))
-    }
+const Basket = () => {
+  const { basketData } = useSelector((state) => state.data);
+  const dispacth = useDispatch();
+  const navigate = useNavigate();
+  const handleDelete = (id) => {
+    dispacth(deleteBasket(id));
+  };
+
+  const totalPrice = basketData.reduce(
+    (total, product) => total + product.price,
+    0
+  );
+
+  const resetData = () => {
+    dispacth(basketReset())
+  }
+
 
   return (
     <div className="basketPage">
       <Layout>
         <Container>
+          <NavLink className="basketDone" onClick={() => navigate(-1)}>
+            <AiOutlineArrowLeft />
+            Geri Dön
+          </NavLink>
           <Table className="basketTable" striped bordered hover>
             <thead>
               <tr>
@@ -30,20 +46,36 @@ const Basket = () => {
               </tr>
             </thead>
             <tbody>
-              { basketData.map((item,key) => (
+              {basketData.map((item, key) => (
                 <tr>
-                  <td>{key+1}</td>
-                  <td style={{ width: "200px" }}><img src={item.image}/></td>
+                  <td>{key + 1}</td>
+                  <td style={{ width: "200px" }}>
+                    <img src={item.image} />
+                  </td>
                   <td>{item.name}</td>
                   <td>{item.sizes}</td>
                   <td>{item.price}</td>
-                  <td ><NavLink onClick={()=>handleDelete(item.id)} style={{color:'red'}}><AiTwotoneDelete/></NavLink></td>
+                  <td>
+                    <NavLink
+                      onClick={() => handleDelete(item.id)}
+                      style={{ color: "red" }}
+                    >
+                      <AiTwotoneDelete />
+                    </NavLink>
+                  </td>
                 </tr>
-              ))
-                
-              }
+              ))}
+              <tr>
+                <td>Total Fiyat</td>
+                <td>{totalPrice} TL</td>
+              </tr>
             </tbody>
           </Table>
+          <div className="basketButton">
+            <button onClick={resetData}>Sepeti Temizle</button>
+            <button>Ödemeye Geç</button>
+          </div>
+
         </Container>
       </Layout>
     </div>

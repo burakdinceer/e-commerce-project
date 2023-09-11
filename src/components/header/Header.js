@@ -5,13 +5,13 @@ import Navbar from "react-bootstrap/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Header.scss";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const Header = () => {
 
   const {basketData} = useSelector((state) => state.data)
-
+  const navigate = useNavigate()
   return (
     <div className="header-cmp">
       <div className="header-text">
@@ -30,12 +30,12 @@ const Header = () => {
         </Navbar>
         
       </div>
-      <div className="header-basket">
+      <div onClick={()=>navigate('/basket')} className="header-basket">
           <NavLink>
             <AiOutlineShoppingCart />
             
           </NavLink>
-          <button className="basketNumber">
+          <button  className="basketNumber">
              <p>{basketData.length}</p>
             </button>
         </div>
