@@ -42,4 +42,42 @@
    background-color:#F35825; ;
  }
 
+ .information{
+  font-weight: 700;
+  .information-person {
+    border-bottom: 1px solid black;
+
+    p{
+      font-size: 1rem;
+      
+    }
+    
+  }
+  .information-text {
+   p{
+    font-size: 1rem;
+    margin: 0;
+    &:nth-child(2){
+      margin-bottom: 15px;
+    }
+    
+   }
+  }
+  .information-price{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin-bottom: 20px;
+  }
+ }
+ .information-button {
+  background-color:#F35825;
+  border: none;
+  color: white;
+  width: 20%;
+  height: 30px;
+  border-radius: 10px;
+  
+ }
+
+
 }

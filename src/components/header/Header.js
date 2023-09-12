@@ -22,9 +22,9 @@ const Header = () => {
             </Navbar.Brand>
             <Nav className="me-auto">
               <Nav.Link href="/">Anasayfa</Nav.Link>
-              <Nav.Link href="#features">Ürünler</Nav.Link>
-              <Nav.Link href="#/">Hakkımızda</Nav.Link>
-              <Nav.Link href="#pricing">İletişim</Nav.Link>
+              <Nav.Link href="/productlist">Ürünler</Nav.Link>
+              <Nav.Link href="#">Hakkımızda</Nav.Link>
+              <Nav.Link href="#">İletişim</Nav.Link>
             </Nav>
           </Container>
         </Navbar>

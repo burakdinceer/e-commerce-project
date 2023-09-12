@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./Basket.scss";
 import Table from "react-bootstrap/Table";
 import Layout from "../../components/layout/Layout";
@@ -25,7 +25,11 @@ const Basket = () => {
   const resetData = () => {
     dispacth(basketReset())
   }
-
+  const handleNavigate = () => {
+    basketData.length >0 ?
+    navigate('/basket/payment')
+    : navigate()
+  }
 
   return (
     <div className="basketPage">
@@ -73,7 +77,7 @@ const Basket = () => {
           </Table>
           <div className="basketButton">
             <button onClick={resetData}>Sepeti Temizle</button>
-            <button onClick={()=>navigate('/basket/payment')}>Ödemeye Geç</button>
+            <button onClick={()=>handleNavigate()}>Ödemeye Geç</button>
           </div>
 
         </Container>

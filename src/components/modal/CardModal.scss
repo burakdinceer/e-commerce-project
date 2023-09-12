@@ -1,0 +1,48 @@
+.card-modal {
+    width:80%;
+    height: 500px;
+    background-color: red;
+    position: absolute;
+    left: 15%;
+    top: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+   .card {
+    width: 400px;
+    height: 250px;
+    background-color: gray;
+    margin-left: 10px;
+    margin-top: 10px;
+    background: linear-gradient(to right, #ff6b6b, #ffa07a);
+    border-radius: 10px; 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); 
+    position: relative;
+  .card-no {
+    position: absolute;
+    bottom: 40%;
+    right: 20%;
+    font-size: 1.5rem;
+  }
+  .card-bilgi {
+    position: absolute;
+    display: flex;
+    bottom: 10%;
+    left: 3%;
+    font-size: 1.5rem;
+  }
+  .card-date {
+    position: absolute;
+    right: 5%;
+    bottom: 10%;
+  }
+   }
+
+   .card-inputs{
+    .name-input {
+        input{
+            width: 20%;
+            height: 30px;
+        }
+    }
+   }
+}
