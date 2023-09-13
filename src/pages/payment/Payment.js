@@ -5,7 +5,7 @@ import { AiOutlineArrowLeft } from "react-icons/ai";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-import { addPaymentData, basketReset } from "../../redux/dataSlice";
+import { addPaymentData, basketReset, formData, formDataChange } from "../../redux/dataSlice";
 import Swal from "sweetalert2";
 import "./Payment.scss";
 import CardModal from "../../components/modal/CardModal";
@@ -18,10 +18,11 @@ const Payment = () => {
   const { register, handleSubmit } = useForm();
   const dispacth = useDispatch();
   const onSubmit = (data) => {
-    const newData = data.payment === 'Kredi Kartı İle Ödeme' ?
+    const newArr= dispacth(formDataChange(data))
+     data.payment === 'Kredi Kartı İle Ödeme' ?
     setShowModal(true)
     :
-    dispacth(addPaymentData(data));
+    dispacth(addPaymentData(newArr));
   };
 
  
@@ -94,13 +95,13 @@ const Payment = () => {
                   <p>Ödeme Yöntemi</p>
                  {
                   showModal ?
-                  <CardModal/>
+                  <CardModal  setShowModal={setShowModal}/>
                 : <select required {...register("payment")}>
                 <option value="Kapıda Ödeme">Kapıda Nakit Ödeme</option>
                 
               
               <option value="Kredi Kartı İle Ödeme">
-              Kapıda Kredi Kartı ile Ödeme
+              Kredi Kartı ile Ödeme
             </option>
               
               </select>
